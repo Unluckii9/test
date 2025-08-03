@@ -2,14 +2,20 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "build",
+      "label": "build-raylib-static",
       "type": "shell",
       "command": "clang++",
       "args": [
         "-std=c++17",
         "main.cpp",
         "-o",
-        "main"
+        "main",
+        "-I./include",
+        "./lib/libraylib.a",
+        "-framework", "OpenGL",
+        "-framework", "Cocoa",
+        "-framework", "IOKit",
+        "-framework", "CoreVideo"
       ],
       "group": {
         "kind": "build",
